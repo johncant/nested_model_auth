@@ -24,7 +24,6 @@ module NestedModelAuth
 
       base.send :cattr_accessor, :authorization_rules
       base.authorization_rules = {}
-        puts base.inspect
 
       base.send :after_initialize do
         @authorizations = {}
