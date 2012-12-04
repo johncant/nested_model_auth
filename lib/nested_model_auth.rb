@@ -17,18 +17,17 @@ module NestedModelAuth
 
   end
 
-  module Base
+  module Model
     def self.included(base)
-      base.class_eval do
-        extend ClassMethods
-        include InstanceMethods
+      base.send :extend, ClassMethods
+      base.send :include, InstanceMethods
 
-        cattr_accessor :authorization_rules
-        @@authorization_rules = {}
+      base.send :cattr_accessor, :authorization_rules
+      base.authorization_rules = {}
+        puts base.inspect
 
-        after_initialize do
-          @authorizations = {}
-        end
+      base.send :after_initialize do
+        @authorizations = {}
       end
     end
 
@@ -82,4 +81,3 @@ module NestedModelAuth
   end
 end
 
-ActiveRecord::Base.send :include, NestedModelAuth::Base

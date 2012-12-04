@@ -16,6 +16,7 @@ All feedback welcome!
 # Bad example here, but I hope it gets the point across
 
 class GroupMembership < ActiveRecord::Base
+  include NestedModelAuth::Model
 
   belongs\_to :group
   belongs\_to :account
