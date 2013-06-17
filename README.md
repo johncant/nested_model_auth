@@ -1,3 +1,7 @@
+# Read this first
+
+Turns out that I was way ahead of the game here and the Rails team have done this better :) - https://github.com/rails/protected_attributes
+
 # NestedModelAuth
 
 nested\_model\_auth is a simple model based authentication nanoframework for use with ActiveRecord. All it does is provide convenient methods of determining whether a new or changed record should be allowed to be saved by a user. The goal is to provide a method which can be hooked into by <a href=https://github.com/ryanb/cancan>CanCan</a> to authorize saving of new or changed records to protect against mass assignment vulnerabilities. Please note that this gem does not depend on CanCan, and I don't presume to tell you how you _should_ use this gem, but only how to use it and how I intend to use it.
